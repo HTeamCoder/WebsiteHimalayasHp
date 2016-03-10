@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use common\models\hanghoa;
 
 /**
- * HanghoaSearch represents the model behind the search form about `common\models\hanghoa`. fd
+ * HanghoaSearch represents the model behind the search form about `common\models\hanghoa`. fd sdgsadf
  */
 class HanghoaSearch extends hanghoa
 {
