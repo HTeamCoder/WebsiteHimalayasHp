@@ -6,8 +6,6 @@ use yii\base\Model;
 
 /**
  * Login form
- * Đây là form đăng nhập
- * Thay đổi
  */
 class LoginForm extends Model
 {
@@ -34,7 +32,7 @@ class LoginForm extends Model
     }
 
     /**
-     * Validates the password.zxcvzxcvf àasdfxcvxcvzxvc
+     * Validates the password.
      * This method serves as the inline validation for password.
      *
      * @param string $attribute the attribute currently being validated
@@ -51,20 +49,6 @@ class LoginForm extends Model
     }
 
     /**
-     * Finds user by [[username]]
-     *
-     * @return User|null
-     */
-    protected function getUser()
-    {
-        if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
-        }
-
-        return $this->_user;
-    }
-
-    /**
      * Logs in a user using the provided username and password.
      *
      * @return boolean whether the user is logged in successfully
@@ -76,5 +60,19 @@ class LoginForm extends Model
         } else {
             return false;
         }
+    }
+
+    /**
+     * Finds user by [[username]]
+     *
+     * @return User|null
+     */
+    protected function getUser()
+    {
+        if ($this->_user === null) {
+            $this->_user = User::findByUsername($this->username);
+        }
+
+        return $this->_user;
     }
 }
