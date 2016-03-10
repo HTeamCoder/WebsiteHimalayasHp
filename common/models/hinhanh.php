@@ -7,7 +7,7 @@ use yii\web\UploadedFile;
 /**
  * This is the model class for table "{{%hinhanh}}".
  *
- * @property integer $id
+ * @property integer $id jgjhgjhg
  * @property integer $hanghoa_id
  * @property string $path
  *
