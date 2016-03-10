@@ -20,6 +20,8 @@ use common\components\func;
 class loaihang extends \yii\db\ActiveRecord
 {
     //Đây là sự thay đổi
+
+    //update
     /**
      * @inheritdoc
      */
