@@ -18,7 +18,7 @@ use common\components\func;
  * @property loaihang[] $loaihangs
  */
 /*
- * Thắng ơi test đi này :v
+ * Thắng ơi test đi này :v d
  */
 class loaihang extends \yii\db\ActiveRecord
 {
