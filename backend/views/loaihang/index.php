@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\LoaihangSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Loaihangs');
+$this->title = Yii::t('app', 'Quản lý loại hàng');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="loaihang-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Loaihang'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Thêm loại hàng mới'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
