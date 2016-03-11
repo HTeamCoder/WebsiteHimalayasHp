@@ -13,8 +13,12 @@ use common\components\func;
  * @property integer $nhomloaihang
  *
  * @property Hanghoa[] $hanghoas
+ *
  * @property loaihang $nhomloaihang0
  * @property loaihang[] $loaihangs
+ */
+/*
+ * Thắng ơi test đi này :v d
  */
 class loaihang extends \yii\db\ActiveRecord
 {
