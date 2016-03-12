@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\HanghoaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Hanghoa');
+$this->title = Yii::t('app', 'Quản lý hàng hóa');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="hanghoa-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Hanghoa'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Thêm mới hàng hóa'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -30,8 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'duongdan',
             'tinhtrang',
             'giaban',
-            'loaihang.tenloai',
-            // 'giacanhtranh',
+            [
+                'attribute'=>'loaihang_id',
+                'value'=>'loaihang.tenloai',
+            ],
+            [
+                'attribute'=>'thuonghieu_id',
+                'value'=>'thuonghieu.ten',
+            ],
+             'giacanhtranh',
             // 'tomtat:ntext',
             // 'mota:ntext',
             // 'loaihang_id',
