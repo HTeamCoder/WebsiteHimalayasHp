@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use common\models\hanghoa;
 
 /**
- * HanghoaSearch represents the model behind the search form about `common\models\hanghoa`. fd sdgsadf j
+ * HanghoaSearch represents the model behind the search form about `common\models\hanghoa`.
  */
 class HanghoaSearch extends hanghoa
 {
@@ -18,8 +18,8 @@ class HanghoaSearch extends hanghoa
     public function rules()
     {
         return [
-            [['id', 'loaihang_id', 'thuonghieu_id'], 'integer'],
-            [['tenhang', 'duongdan', 'tinhtrang', 'tomtat', 'mota', 'mahang'], 'safe'],
+            [['id'], 'integer'],
+            [['tenhang', 'duongdan', 'tinhtrang', 'tomtat', 'mota', 'mahang', 'thuonghieu_id', 'loaihang_id'], 'safe'],
             [['giaban', 'giacanhtranh'], 'number'],
         ];
     }
@@ -55,13 +55,11 @@ class HanghoaSearch extends hanghoa
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $query->joinWith(['thuonghieu','loaihang']);
         $query->andFilterWhere([
             'id' => $this->id,
             'giaban' => $this->giaban,
             'giacanhtranh' => $this->giacanhtranh,
-            'loaihang_id' => $this->loaihang_id,
-            'thuonghieu_id' => $this->thuonghieu_id,
         ]);
 
         $query->andFilterWhere(['like', 'tenhang', $this->tenhang])
@@ -69,8 +67,9 @@ class HanghoaSearch extends hanghoa
             ->andFilterWhere(['like', 'tinhtrang', $this->tinhtrang])
             ->andFilterWhere(['like', 'tomtat', $this->tomtat])
             ->andFilterWhere(['like', 'mota', $this->mota])
-            ->andFilterWhere(['like', 'mahang', $this->mahang]);
-
+            ->andFilterWhere(['like', 'mahang', $this->mahang])
+            ->andFilterWhere(['like', 'yii2_thuonghieu.ten', $this->thuonghieu_id])
+            ->andFilterWhere(['like', 'yii2_loaihang.tenloai', $this->loaihang_id]);
         return $dataProvider;
     }
 }
