@@ -56,15 +56,15 @@ class hanghoa extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'tenhang' => Yii::t('app', 'Tên hàng'),
-            'duongdan' => Yii::t('app', 'Duongdan'),
+            'duongdan' => Yii::t('app', 'Đường dẫn'),
             'tinhtrang' => Yii::t('app', 'Tình trạng'),
             'giaban' => Yii::t('app', 'Giá bán'),
             'giacanhtranh' => Yii::t('app', 'Giá cạnh tranh'),
             'tomtat' => Yii::t('app', 'Tóm tắt'),
             'mota' => Yii::t('app', 'Mô tả'),
-            'loaihang_id' => Yii::t('app', 'Loaihang ID'),
+            'loaihang_id' => Yii::t('app', 'Loại hàng'),
             'mahang' => Yii::t('app', 'Mã hàng'),
-            'thuonghieu_id' => Yii::t('app', 'Thuonghieu ID'),
+            'thuonghieu_id' => Yii::t('app', 'Thương hiệu'),
         ];
     }
 
@@ -91,6 +91,7 @@ class hanghoa extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Hinhanh::className(), ['hanghoa_id' => 'id']);
     }
+
 
     /**
      * @inheritdoc
