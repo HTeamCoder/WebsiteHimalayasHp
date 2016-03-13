@@ -9,7 +9,7 @@ use common\models\HanghoaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\web\UploadedFile;
 /**
  * HanghoaController implements the CRUD actions for hanghoa model.
  */
@@ -63,9 +63,14 @@ class HanghoaController extends Controller
         $model = new hanghoa();
         $hinhanh = new hinhanh();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $hinhanh->hanghoa_id = $model->id;
-            $hinhanh->path = '123';// fix path hinh anh
-            $hinhanh->save();
+            $hinhanh->file = UploadedFile::getInstances($hinhanh,'file');
+            foreach ($hinhanh->file as $key=>$val) {
+                $hinhanh1 = new hinhanh();
+                $val->saveAs('uploads/'.$model->duongdan.'.'.$val->extension);
+                $hinhanh1->path = 'uploads/'.$model->duongdan.'-'.($key+1).'.'.$val->extension;
+                $hinhanh1->hanghoa_id = $model->id;
+                $hinhanh1->save(false);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -84,12 +89,13 @@ class HanghoaController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $hinhanh = new hinhanh();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'anh'=>$hinhanh,
             ]);
         }
     }
