@@ -40,7 +40,7 @@ class hanghoa extends \yii\db\ActiveRecord
     {
         return [
             [['tenhang', 'giaban', 'giacanhtranh', 'tomtat', 'mota', 'loaihang_id', 'thuonghieu_id','tinhtrang'], 'required'],
-            ['tenhang', 'unique', 'message' => 'This tenhang has already been taken.'],
+            ['tenhang', 'unique', 'message' => 'Tên hàng đã tồn tại'],
             [['tinhtrang', 'tomtat', 'mota'], 'string'],
             [['giaban', 'giacanhtranh'], 'number'],
             [['loaihang_id', 'thuonghieu_id'], 'integer'],
