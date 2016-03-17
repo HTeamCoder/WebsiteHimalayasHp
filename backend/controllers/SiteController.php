@@ -14,6 +14,7 @@ class SiteController extends Controller
 {
     /**
      * @inheritdoc
+     * hgjhgjnmmm
      */
     public function behaviors()
     {
