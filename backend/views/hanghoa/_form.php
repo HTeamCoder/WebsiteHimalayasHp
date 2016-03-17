@@ -20,7 +20,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'giacanhtranh')->textInput() ?>
 
-    <?= $form->field($anh, 'path')->fileInput() ?>
+    <?= $form->field($anh, 'file[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
+
+    <?=
+    (isset($path))?$path:'';
+    ?>
 
     <?= $form->field($model, 'tomtat')->textarea(['rows' => 6]) ?>
 

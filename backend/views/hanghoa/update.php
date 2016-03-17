@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Cập nhật hàng hóa');
     <?= $this->render('_form', [
         'model' => $model,
         'anh'=>$anh,
+        'path'=>$anh->getUrl_image($model),
     ]) ?>
 
 </div>

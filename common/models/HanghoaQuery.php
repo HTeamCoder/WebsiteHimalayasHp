@@ -7,7 +7,7 @@ namespace common\models;
  *
  * @see hanghoa
  */
-class hanghoaQuery extends \yii\db\ActiveQuery
+class HanghoaQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {

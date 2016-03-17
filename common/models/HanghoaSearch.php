@@ -47,7 +47,7 @@ class HanghoaSearch extends hanghoa
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pageSize' => 5,
+                'pageSize' => 4,
             ],
         ]);
 

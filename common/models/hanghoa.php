@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\components\func;
+use yii\web\UploadedFile;
 /**
  * This is the model class for table "{{%hanghoa}}".
  *
@@ -102,10 +103,36 @@ class hanghoa extends \yii\db\ActiveRecord
         return new hanghoaQuery(get_called_class());
     }
 
+    public  function  afterSave($insert,$changedAttributes){
+        $hinhanh = new hinhanh();
+        $hinhanh->file = UploadedFile::getInstances($hinhanh,'file');
+        foreach ($hinhanh->file as $key=>$val)
+        {
+            $hinhanh1 = new hinhanh();
+            $val->saveAs('uploads/'.$this->duongdan.'-'.($key+1).'.'.$val->extension);
+            $hinhanh1->path = 'uploads/'.$this->duongdan.'-'.($key+1).'.'.$val->extension;
+            $hinhanh1->hanghoa_id = $this->id;
+            $hinhanh1->save(false);
+        }
+        return parent::afterSave($insert,$changedAttributes);
+    }
     public function beforeSave($insert)
     {
         $func = new func();
+        $hinhanh = new hinhanh();
+        $hinhanh->deleteAll(['hanghoa_id'=>$this->id]);
         $this->duongdan = $func->taoduongdan($this->tenhang);
         return parent::beforeSave($insert);
+    }
+    public function beforeDelete()
+    {
+        $hinhanh = new hinhanh();
+        $paths = $hinhanh->findAll(['hanghoa_id'=>$this->id]);
+        foreach ($paths as $path)
+        {
+            unlink($path['path']);
+        }
+        $hinhanh->deleteAll(['hanghoa_id'=>$this->id]);
+        return parent::beforeDelete();
     }
 }

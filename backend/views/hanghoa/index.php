@@ -24,7 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'tenhang',
             'duongdan',
@@ -38,15 +37,23 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'thuonghieu_id',
                 'value'=>'thuonghieu.ten',
             ],
-             'giacanhtranh',
+            'giacanhtranh',
+            [
+                'label'=>'Hình ảnh',
+                'format' => 'html',
+                'value'=>function ($model) {
+                    $hinhanh = new \common\models\hinhanh();
+                    return $hinhanh->getUrl_image($model);
+                },
+            ],
             // 'tomtat:ntext',
             // 'mota:ntext',
             // 'loaihang_id',
             // 'mahang',
             // 'thuonghieu_id',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    ?>
 
 </div>

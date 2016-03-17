@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\web\UploadedFile;
+use yii\helpers\Html;
 /**
  * This is the model class for table "{{%hinhanh}}".
  *
@@ -15,6 +16,7 @@ use yii\web\UploadedFile;
  */
 class hinhanh extends \yii\db\ActiveRecord
 {
+    public $file;
     /**
      * @inheritdoc
      */
@@ -31,7 +33,7 @@ class hinhanh extends \yii\db\ActiveRecord
         return [
             [['hanghoa_id', 'path'], 'required'],
             [['hanghoa_id'], 'integer'],
-            [['path'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
+            [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 10],
             [['path'], 'string', 'max' => 45]
         ];
     }
@@ -44,7 +46,7 @@ class hinhanh extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'hanghoa_id' => Yii::t('app', 'Hanghoa ID'),
-            'path' => Yii::t('app', 'Path'),
+            'file' => Yii::t('app', 'Danh sách hình ảnh'),
         ];
     }
 
@@ -64,14 +66,15 @@ class hinhanh extends \yii\db\ActiveRecord
     {
         return new HinhanhQuery(get_called_class());
     }
-
-    public function upload()
+    public function getUrl_image($data)
     {
-        if ($this->validate()) {
-            $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
-            return 'uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
-        } else {
-            return false;
+        $string_path = '';
+        $path_img = hinhanh::find()->where(['hanghoa_id' => $data->id])->limit(3)->all();
+        foreach ($path_img as $img)
+        {
+            if (file_exists($img['path']))
+                $string_path .= Html::img(\Yii::$app->request->BaseUrl.'/'.$img['path'], ['width'=>'50','height'=>'50','style'=>'margin:0 5px;']);
         }
+        return $string_path;
     }
 }
