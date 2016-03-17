@@ -63,15 +63,7 @@ class HanghoaController extends Controller
         $model = new hanghoa();
         $hinhanh = new hinhanh();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $hinhanh->file = UploadedFile::getInstances($hinhanh,'file');
-            foreach ($hinhanh->file as $key=>$val) {
-                $hinhanh1 = new hinhanh();
-                $val->saveAs('uploads/'.$model->duongdan.'.'.$val->extension);
-                $hinhanh1->path = 'uploads/'.$model->duongdan.'-'.($key+1).'.'.$val->extension;
-                $hinhanh1->hanghoa_id = $model->id;
-                $hinhanh1->save(false);
-            }
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -91,7 +83,7 @@ class HanghoaController extends Controller
         $model = $this->findModel($id);
         $hinhanh = new hinhanh();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
