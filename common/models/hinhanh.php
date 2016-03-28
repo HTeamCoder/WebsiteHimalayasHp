@@ -8,7 +8,7 @@ use yii\helpers\Html;
 /**
  * This is the model class for table "{{%hinhanh}}".
  *
- * @property integer $id jgjhgjhg
+ * @property integer $id
  * @property integer $hanghoa_id
  * @property string $path
  *
@@ -34,7 +34,7 @@ class hinhanh extends \yii\db\ActiveRecord
             [['hanghoa_id', 'path'], 'required'],
             [['hanghoa_id'], 'integer'],
             [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 10],
-            [['path'], 'string', 'max' => 45]
+//            [['path'], 'string', 'max' => 45]
         ];
     }
 

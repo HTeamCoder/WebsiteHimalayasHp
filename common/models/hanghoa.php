@@ -1,7 +1,7 @@
 <?php
 
 namespace common\models;
-/**/
+
 use Yii;
 use common\components\func;
 use yii\web\UploadedFile;
@@ -104,7 +104,7 @@ class hanghoa extends \yii\db\ActiveRecord
     }
 
     public  function  afterSave($insert,$changedAttributes){
-        $hinhanh = new hinhanh();
+        /*$hinhanh = new hinhanh();
         $hinhanh->file = UploadedFile::getInstances($hinhanh,'file');
         foreach ($hinhanh->file as $key=>$val)
         {
@@ -114,7 +114,13 @@ class hanghoa extends \yii\db\ActiveRecord
             $hinhanh1->hanghoa_id = $this->id;
             $hinhanh1->save(false);
         }
-        return parent::afterSave($insert,$changedAttributes);
+        return parent::afterSave($insert,$changedAttributes);*/
+
+        $files = UploadedFile::getInstances(new hinhanh(),'path');
+        foreach($files as $file){
+
+        }
+
     }
     public function beforeSave($insert)
     {

@@ -1,5 +1,4 @@
 <?php
-
 namespace backend\controllers;
 
 use common\models\hinhanh;
@@ -10,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+
 /**
  * HanghoaController implements the CRUD actions for hanghoa model.
  */
@@ -33,7 +33,7 @@ class HanghoaController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new HanghoaSearch();
+        $searchModel = new hanghoasearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -62,12 +62,16 @@ class HanghoaController extends Controller
     {
         $model = new hanghoa();
         $hinhanh = new hinhanh();
+
+//        var_dump($files);
+//        exit;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'anh'=>$hinhanh,
+                'hinhanh'=>$hinhanh,
             ]);
         }
     }
@@ -87,7 +91,7 @@ class HanghoaController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'anh'=>$hinhanh,
+                'hinhanh'=>$hinhanh,
             ]);
         }
     }

@@ -21,8 +21,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'giacanhtranh')->textInput() ?>
 
     <?php
-    echo $form->field($hinhanh, 'anh')->widget(FileInput::classname(), [
-        'options' => ['accept' => 'image/*'],
+    echo $form->field($hinhanh, 'path[]')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*','multiple' => true],
     ]);
     ?>
     <?=
