@@ -1,5 +1,5 @@
 <?php
-
+use kartik\file\FileInput;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -20,8 +20,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'giacanhtranh')->textInput() ?>
 
-    <?= $form->field($anh, 'file[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
-
+    <?php
+    echo $form->field($hinhanh, 'anh')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+    ]);
+    ?>
     <?=
     (isset($path))?$path:'';
     ?>
