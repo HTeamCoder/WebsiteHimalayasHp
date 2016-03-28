@@ -26,18 +26,21 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             'id',
             'tenhang',
-            'duongdan',
             'tinhtrang',
             'giaban',
             [
                 'attribute'=>'loaihang_id',
-                'value'=>'loaihang.tenloai',
+                'value'=>'$data->loaihang->tenloai',
             ],
             [
                 'attribute'=>'thuonghieu_id',
                 'value'=>'thuonghieu.ten',
             ],
-            'giacanhtranh',
+            [
+                'value' => function($data){
+                    return number_format($data->giacanhtranh, 0, '','.');
+                }
+            ],
             [
                 'label'=>'Hình ảnh',
                 'format' => 'html',

@@ -20,9 +20,9 @@ use yii\web\UploadedFile;
  * @property string $mahang
  * @property integer $thuonghieu_id
  *
- * @property Loaihang $loaihang
- * @property Thuonghieu $thuonghieu
- * @property Hinhanh[] $hinhanhs
+ * @property loaihang $loaihang
+ * @property thuonghieu $thuonghieu
+ * @property hinhanh[] $hinhanhs
  */
 class hanghoa extends \yii\db\ActiveRecord
 {
@@ -74,7 +74,7 @@ class hanghoa extends \yii\db\ActiveRecord
      */
     public function getLoaihang()
     {
-        return $this->hasOne(Loaihang::className(), ['id' => 'loaihang_id']);
+        return $this->hasOne(loaihang::className(), ['id' => 'loaihang_id']);
     }
 
     /**
