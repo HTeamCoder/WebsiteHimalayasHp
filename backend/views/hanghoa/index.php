@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\HanghoaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
+/**/
 $this->title = Yii::t('app', 'Quản lý hàng hóa');
 $this->params['breadcrumbs'][] = $this->title;
 ?>

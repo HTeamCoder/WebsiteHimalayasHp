@@ -1,7 +1,7 @@
 <?php
 
 namespace common\models;
-
+/**/
 use Yii;
 use common\components\func;
 use yii\web\UploadedFile;
