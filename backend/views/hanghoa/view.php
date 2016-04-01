@@ -41,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'mahang',
             'thuonghieu_id',
             'thuonghieu.ten',
+            'hinhanh_id'
         ],
     ]) ?>
 
