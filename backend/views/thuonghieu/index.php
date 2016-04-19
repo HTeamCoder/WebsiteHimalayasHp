@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\ThuonghieuSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Thuonghieu');
+$this->title = Yii::t('app', 'Quản lý thương hiệu');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="thuonghieu-index">
@@ -16,18 +16,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Thuonghieu'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Thêm mới thương hiệu'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'summary' => "Hiển thị <strong>{begin}</strong> -> <strong>{end}</strong> của <strong>{count}</strong> thương hiệu",
+        'emptyText'=>'<p class="text-center"><strong class="text-danger">Không tìm thấy kết quả nào</strong></p>',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'ten',
-            'duongdan',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

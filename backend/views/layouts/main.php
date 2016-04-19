@@ -28,22 +28,48 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'H-Team',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-    ];
+    $menuItems = [];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => 'Tổng quan', 'url' => ['/site/index']];
+        $menuItems[] = ['label' => 'Quản lý danh mục', 'items'=>[
+            [
+                'label' => 'Loại hàng',
+                'url' => Yii::$app->urlManager->createUrl('loaihang/index')
+            ],
+            [
+                'label' => 'Thương hiệu',
+                'url' => Yii::$app->urlManager->createUrl('thuonghieu/index')
+            ],
+            [
+                'label' => 'Nhà cung cấp',
+                'url' => Yii::$app->urlManager->createUrl('nhacungcap/index')
+            ],
+            [
+                'label' => 'Slide',
+                'url' => Yii::$app->urlManager->createUrl('slide/index')
+            ],
+            [
+                'label' => 'Đơn vị tính',
+                'url' => Yii::$app->urlManager->createUrl('donvitinh/index')
+            ],
+            
+        ]
+
+        ];
+        $menuItems[] = ['label' => 'Quản lý hàng hóa','url' => Yii::$app->urlManager->createUrl('hanghoa/index')];
+        $menuItems[] = ['label' => 'Quản lý đơn hàng', 'url' => Yii::$app->urlManager->createUrl('donhang/index')];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                'Đăng xuất (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link']
             )
             . Html::endForm()
@@ -67,9 +93,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; H-Team <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"><?= 'Powered by '.Html::a('HimalayasHP','http://himalayashp.com',['title'=>'himalayashp']) ?></p>
     </div>
 </footer>
 

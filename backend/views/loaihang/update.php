@@ -5,12 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\loaihang ddd*/
 
-$this->title = Yii::t('app', 'Update {modelClass}: ', [
-    'modelClass' => 'Loaihang',
-]) . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Loaihangs'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->title = Yii::t('app', 'Cập nhật loại hàng : ') . ' ' . $model->tenloai;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Loại hàng'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->tenloai, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = Yii::t('app', 'Cập nhật');
 ?>
 <div class="loaihang-update">
 

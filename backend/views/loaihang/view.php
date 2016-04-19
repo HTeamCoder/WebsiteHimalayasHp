@@ -6,20 +6,20 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\loaihangssss */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Loaihangs'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = $model->tenloai;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Loại hàng'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = $model->tenloai;
 ?>
 <div class="loaihang-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($model->tenloai) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
+        <?= Html::a(Yii::t('app', 'Cập nhật'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'Xóa bỏ'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('app', 'Bạn có chắc chắn muốn xóa loại hàng '.$model->tenloai.' này không ?'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -31,7 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'tenloai',
             'duongdan',
-            'nhomloaihang',
+            [
+                'attribute'=>'nhomloaihang',
+                'value'=>($model->nhomloaihang)?$model->nhomloaihang0->tenloai:'',
+            ],
         ],
     ]) ?>
 

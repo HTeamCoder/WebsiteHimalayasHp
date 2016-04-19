@@ -13,7 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="loaihang-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a(Yii::t('app', 'Thêm loại hàng mới'), ['create'], ['class' => 'btn btn-success']) ?>
@@ -22,14 +21,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'summary' => "Hiển thị <strong>{begin}</strong> -> <strong>{end}</strong> của <strong>{count}</strong> loại hàng",
+        'emptyText'=>'<p class="text-center"><strong class="text-danger">Không tìm thấy kết quả nào</strong></p>',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'tenloai',
-            'duongdan',
-            'nhomloaihang',
-
+            [
+                'attribute'=>'tenloai',
+                'filter'=>false,
+            ],
+            [
+                'attribute'=>'nhomloaihang',
+                'value'=>function($model){
+                    if (!$model->nhomloaihang)
+                        return '';
+                    return $model->nhomloaihang0->tenloai;
+                },
+                'filter' => Html::activeDropDownList($searchModel,'nhomloaihang',\yii\helpers\ArrayHelper::map(\common\models\loaihang::find()->all(),'id','tenloai'
+                ),['prompt' => 'Tất cả','class' => 'form-control']),
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
