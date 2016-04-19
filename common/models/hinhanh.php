@@ -3,12 +3,12 @@
 namespace common\models;
 
 use Yii;
-use yii\web\UploadedFile;
 use yii\helpers\Html;
+use yii\helpers\Url;
 /**
  * This is the model class for table "{{%hinhanh}}".
  *
- * @property integer $id
+ * @property integer $id jgjhgjhg
  * @property integer $hanghoa_id
  * @property string $path
  *
@@ -33,11 +33,10 @@ class hinhanh extends \yii\db\ActiveRecord
         return [
             [['hanghoa_id', 'path'], 'required'],
             [['hanghoa_id'], 'integer'],
-            [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 10],
-//            [['path'], 'string', 'max' => 45]
+            [['file'], 'file', 'extensions' => 'png, jpg', 'maxFiles' => 10,'maxSize'=>1024*1024],
+            [['path'], 'string', 'max' => 45]
         ];
     }
-
     /**
      * @inheritdoc
      */
@@ -49,7 +48,6 @@ class hinhanh extends \yii\db\ActiveRecord
             'file' => Yii::t('app', 'Danh sách hình ảnh'),
         ];
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -69,11 +67,14 @@ class hinhanh extends \yii\db\ActiveRecord
     public function getUrl_image($data)
     {
         $string_path = '';
-        $path_img = hinhanh::find()->where(['hanghoa_id' => $data->id])->limit(3)->all();
+        $path_img = hinhanh::find()->where(['hanghoa_id' => $data->id])->all();
         foreach ($path_img as $img)
         {
             if (file_exists($img['path']))
-                $string_path .= Html::img(\Yii::$app->request->BaseUrl.'/'.$img['path'], ['width'=>'50','height'=>'50','style'=>'margin:0 5px;']);
+                if (Yii::$app->controller->action->id != 'view')
+                $string_path .= Html::tag('div',Html::tag('div',Html::img(\Yii::$app->request->BaseUrl.'/'.$img['path'], ['width'=>'150','height'=>'150']).Html::a(Html::tag('i','',['class'=>'glyphicon glyphicon-remove delete-img']),Url::to(['hanghoa/deleteimage','id'=>$img['id'],'hanghoa_id'=>$img['hanghoa_id']]),['title'=>'Xóa']),['class'=>'box-image']),['class'=>'wrap-image']);
+                else
+                 $string_path .= Html::img(\Yii::$app->request->BaseUrl.'/'.$img['path'], ['width'=>'150','height'=>'150','style'=>'margin:0 5px;']);   
         }
         return $string_path;
     }

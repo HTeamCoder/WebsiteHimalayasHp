@@ -15,12 +15,26 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    // public $basePath = '@webroot';
+    // public $baseUrl = '@web';
+	public $sourcePath = '@bower/gifty/';
     public $css = [
-        'css/site.css',
+        'css/style.css',
+		'css/jquery.countdown.css',
+		'css/megamenu.css',
+        'css/etalage.css',
+        'css/amazingslider-1.css',
     ];
     public $js = [
+		'js/jquery.easydropdown.js',
+		'js/responsiveslides.min.js',
+		'js/jquery.countdown.js',
+		'js/script.js',
+		'js/megamenu.js',
+		'js/jquery.flexisel.js',
+        'js/jquery.etalage.min.js',
+        'js/amazingslider.js',
+        'js/initslider-1.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

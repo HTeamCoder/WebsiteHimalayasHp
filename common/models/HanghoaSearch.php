@@ -19,7 +19,7 @@ class HanghoaSearch extends hanghoa
     {
         return [
             [['id'], 'integer'],
-            [['tenhang', 'duongdan', 'tinhtrang', 'tomtat', 'mota', 'mahang', 'thuonghieu_id', 'loaihang_id'], 'safe'],
+            [['tenhang', 'duongdan', 'tinhtrang', 'tomtat', 'mota', 'mahang', 'thuonghieu_id', 'loaihang_id','nhacungcap_id'], 'safe'],
             [['giaban', 'giacanhtranh'], 'number'],
         ];
     }
@@ -54,15 +54,13 @@ class HanghoaSearch extends hanghoa
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
             return $dataProvider;
         }
-        $query->joinWith(['thuonghieu','loaihang']);
         $query->andFilterWhere([
             'id' => $this->id,
-            'giaban' => $this->giaban,
-            'giacanhtranh' => $this->giacanhtranh,
+            'thuonghieu_id'=> $this->thuonghieu_id,
+            'loaihang_id'=> $this->loaihang_id,
+            'nhacungcap_id'=> $this->nhacungcap_id,
         ]);
 
         $query->andFilterWhere(['like', 'tenhang', $this->tenhang])
@@ -70,9 +68,7 @@ class HanghoaSearch extends hanghoa
             ->andFilterWhere(['like', 'tinhtrang', $this->tinhtrang])
             ->andFilterWhere(['like', 'tomtat', $this->tomtat])
             ->andFilterWhere(['like', 'mota', $this->mota])
-            ->andFilterWhere(['like', 'mahang', $this->mahang])
-            ->andFilterWhere(['like', 'yii2_thuonghieu.ten', $this->thuonghieu_id])
-            ->andFilterWhere(['like', 'yii2_loaihang.tenloai', $this->loaihang_id]);
+            ->andFilterWhere(['like', 'mahang', $this->mahang]);
         return $dataProvider;
     }
 }

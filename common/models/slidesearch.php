@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use common\models\slide;
 
 /**
- * slidesearch represents the model behind the search form about `common\models\slide`.
+ * SlideSearch represents the model behind the search form about `common\models\slide`.
  */
-class slidesearch extends slide
+class SlideSearch extends slide
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class slidesearch extends slide
     {
         return [
             [['id'], 'integer'],
-            [['tieu_de', 'duong_dan', 'active', 'noi_dung'], 'safe'],
+            [['tieude', 'duongdan', 'trangthai', 'noidung'], 'safe'],
         ];
     }
 
@@ -57,12 +57,12 @@ class slidesearch extends slide
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'trangthai'=>$this->trangthai,
         ]);
 
-        $query->andFilterWhere(['like', 'tieu_de', $this->tieu_de])
-            ->andFilterWhere(['like', 'duong_dan', $this->duong_dan])
-            ->andFilterWhere(['like', 'active', $this->active])
-            ->andFilterWhere(['like', 'noi_dung', $this->noi_dung]);
+        $query->andFilterWhere(['like', 'tieude', $this->tieude])
+            ->andFilterWhere(['like', 'duongdan', $this->duongdan])
+            ->andFilterWhere(['like', 'noidung', $this->noidung]);
 
         return $dataProvider;
     }

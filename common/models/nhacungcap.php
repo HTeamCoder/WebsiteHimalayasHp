@@ -5,13 +5,15 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "yii2_nha_cung_cap".
+ * This is the model class for table "{{%nhacungcap}}".
  *
  * @property integer $id
- * @property string $ten
- * @property string $dia_chi
+ * @property string $tennhacungcap
+ * @property string $diachi
+ * @property string $sodienthoai
  * @property string $email
- * @property string $so_dien_thoai
+ *
+ * @property Hanghoa[] $hanghoas
  */
 class nhacungcap extends \yii\db\ActiveRecord
 {
@@ -20,7 +22,7 @@ class nhacungcap extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'yii2_nha_cung_cap';
+        return '{{%nhacungcap}}';
     }
 
     /**
@@ -29,11 +31,12 @@ class nhacungcap extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ten', 'dia_chi'], 'required'],
-            [['ten', 'email'], 'string', 'max' => 100],
-            [['email'], 'email'],
-            [['dia_chi'], 'string', 'max' => 200],
-            [['so_dien_thoai'], 'number']
+            [['tennhacungcap', 'email'], 'required'],
+            [['tennhacungcap', 'email'], 'string', 'max' => 45],
+            [['sodienthoai'], 'string','max'=>11,'min'=>10],
+            [['sodienthoai'], 'number'],
+            ['email', 'email'],
+            ['tennhacungcap', 'unique'],
         ];
     }
 
@@ -44,19 +47,27 @@ class nhacungcap extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'ten' => Yii::t('app', 'Tên'),
-            'dia_chi' => Yii::t('app', 'Địa chỉ'),
+            'tennhacungcap' => Yii::t('app', 'Tên nhà cung cấp'),
+            'diachi' => Yii::t('app', 'Địa chỉ'),
+            'sodienthoai' => Yii::t('app', 'Số điện thoại'),
             'email' => Yii::t('app', 'Email'),
-            'so_dien_thoai' => Yii::t('app', 'Số điện thoại'),
         ];
     }
 
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getHanghoas()
+    {
+        return $this->hasMany(Hanghoa::className(), ['nhacungcap_id' => 'id']);
+    }
+
+    /**
      * @inheritdoc
-     * @return Yii2NhaCungCapQuery the active query used by this AR class.
+     * @return NhacungcapQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new Yii2NhaCungCapQuery(get_called_class());
+        return new NhacungcapQuery(get_called_class());
     }
 }

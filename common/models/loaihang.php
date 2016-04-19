@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\components\func;
+use yii\helpers\Url;
 /**
  * This is the model class for table "{{%loaihang}}".
  *
@@ -18,7 +19,6 @@ use common\components\func;
  * @property loaihang[] $loaihangs
  */
 /*
- * Thắng ơi test đi này :v d
  */
 class loaihang extends \yii\db\ActiveRecord
 {
@@ -38,6 +38,7 @@ class loaihang extends \yii\db\ActiveRecord
         return [
             [['tenloai'], 'required'],
             [['nhomloaihang'], 'integer'],
+            ['tenloai','unique'],
             [['tenloai', 'duongdan'], 'string', 'max' => 100]
         ];
     }
@@ -50,7 +51,7 @@ class loaihang extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'tenloai' => Yii::t('app', 'Tên loại'),
-            'duongdan' => Yii::t('app', 'Duongdan'),
+            'duongdan' => Yii::t('app', 'Đường dẫn'),
             'nhomloaihang' => Yii::t('app', 'Nhóm loại hàng'),
         ];
     }
@@ -60,7 +61,7 @@ class loaihang extends \yii\db\ActiveRecord
      */
     public function getHanghoas()
     {
-        return $this->hasMany(Hanghoa::className(), ['loaihang_id' => 'id']);
+        return $this->hasMany(hanghoa::className(), ['loaihang_id' => 'id']);
     }
 
     /**
@@ -94,4 +95,24 @@ class loaihang extends \yii\db\ActiveRecord
         $this->duongdan = $func->taoduongdan($this->tenloai);
         return parent::beforeSave($insert); 
     }
+    public function menuLoaihang($nhomloaihang)
+    {
+        $menuStr = '';
+        if(isset($nhomloaihang))
+        {
+            $dsnhomloaihang = $this->findAll(['nhomloaihang'=>$nhomloaihang]);
+
+            if($dsnhomloaihang)
+            {
+               foreach ($dsnhomloaihang as $loaihang) {
+                    $menuStr .='
+                            <li><a href="'.Url::to(['hanghoa/danhmuc','id'=>$loaihang->id]).'">'.$loaihang['tenloai'].'</a></li>
+                            ';
+                } 
+            }
+            return $menuStr;
+        }
+        return false;
+    }
+    
 }

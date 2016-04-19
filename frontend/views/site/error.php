@@ -9,19 +9,12 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
-<div class="site-error">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
+<div class="content-top">
+    <div class="container">
+        <div class="error-404 text-center">
+            <h1 style="color: #c9302c">404</h1>
+            <p>Đường dẫn không tồn tại</p>
+            <a class="btn-danger btn" style="padding: 0.8em 1.5em;margin-top: 1em;" href="index.html">Trở về trang chủ</a>
+         </div>
+      </div>
 </div>

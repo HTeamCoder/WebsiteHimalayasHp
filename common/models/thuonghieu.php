@@ -30,6 +30,7 @@ class thuonghieu extends \yii\db\ActiveRecord
     {
         return [
             [['ten'], 'required'],
+            ['ten','unique'],
             [['ten', 'duongdan'], 'string', 'max' => 45]
         ];
     }
@@ -41,8 +42,8 @@ class thuonghieu extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'ten' => Yii::t('app', 'Tên thương hiệu'),
-            'duongdan' => Yii::t('app', 'Duongdan'),
+            'ten' => Yii::t('app', 'Thương hiệu'),
+            'duongdan' => Yii::t('app', 'Đường dẫn'),
         ];
     }
 

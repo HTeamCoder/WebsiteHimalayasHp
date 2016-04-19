@@ -28,6 +28,12 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'cart' => [
+            'class' => 'yz\shoppingcart\ShoppingCart',
+        ],
+        // 'urlManager'=>[
+        //     'scriptUrl'=>'/index.php',
+        // ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

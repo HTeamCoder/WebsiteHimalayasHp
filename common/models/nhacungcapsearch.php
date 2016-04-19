@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use common\models\nhacungcap;
 
 /**
- * nhacungcapsearch represents the model behind the search form about `common\models\nhacungcap`.
+ * NhacungcapSearch represents the model behind the search form about `common\models\nhacungcap`.
  */
-class nhacungcapsearch extends nhacungcap
+class NhacungcapSearch extends nhacungcap
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class nhacungcapsearch extends nhacungcap
     {
         return [
             [['id'], 'integer'],
-            [['ten', 'dia_chi', 'email', 'so_dien_thoai'], 'safe'],
+            [['tennhacungcap', 'diachi', 'sodienthoai', 'email'], 'safe'],
         ];
     }
 
@@ -59,10 +59,10 @@ class nhacungcapsearch extends nhacungcap
             'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'ten', $this->ten])
-            ->andFilterWhere(['like', 'dia_chi', $this->dia_chi])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'so_dien_thoai', $this->so_dien_thoai]);
+        $query->andFilterWhere(['like', 'tennhacungcap', $this->tennhacungcap])
+            ->andFilterWhere(['like', 'diachi', $this->diachi])
+            ->andFilterWhere(['like', 'sodienthoai', $this->sodienthoai])
+            ->andFilterWhere(['like', 'email', $this->email]);
 
         return $dataProvider;
     }
