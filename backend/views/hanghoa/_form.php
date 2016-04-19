@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\hanghoa */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\widgets\ActiveForm kk*/
 ?>
 
 <div class="hanghoa-form">
