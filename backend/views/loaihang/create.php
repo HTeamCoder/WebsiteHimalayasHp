@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\loaihang jjjjjok
  * */
 
-$this->title = Yii::t('app', 'Tạo mới loại hàng');
+$this->title = Yii::t('app', 'Thêm mới loại hàng');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Loại hàng'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use mihaildev\ckeditor\CKEditor;
 /* @var $this yii\web\View */
 /* @var $model common\models\nhacungcap */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,16 +12,23 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'ten')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'tennhacungcap')->textInput(['maxlength' => true,'placeholder'=>'Nhập tên nhà cung cấp'])->label('Tên nhà cung cấp'. Html::tag('span', ' *',['class'=>'text-danger'])) ?>
 
-    <?= $form->field($model, 'dia_chi')->textInput(['maxlength' => true]) ?>
+    <?=
+    $form->field($model, 'diachi')->widget(CKEditor::className(),[
+        'editorOptions' => [
+            'preset' => 'full',
+            'inline' => false,
+        ],
+    ])->label('Địa chỉ'. Html::tag('span', ' *',['class'=>'text-danger']));
+    ?>
 
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'sodienthoai')->textInput(['maxlength' => true,'placeholder'=>'Nhập số điện thoại']) ?>
 
-    <?= $form->field($model, 'so_dien_thoai')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true,'placeholder'=>'Nhập email của bạn'])->label('Email'. Html::tag('span', ' *',['class'=>'text-danger'])) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Thêm mới') : Yii::t('app', 'Chỉnh sửa'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

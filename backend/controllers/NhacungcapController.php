@@ -4,19 +4,28 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\nhacungcap;
-use common\models\nhacungcapsearch;
+use common\models\NhacungcapSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * NhacungcapController implements the CRUD actions for nhacungcap model.
  */
 class NhacungcapController extends Controller
 {
-    public function behaviors()
+     public function behaviors()
     {
         return [
+         'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -32,7 +41,7 @@ class NhacungcapController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new nhacungcapsearch();
+        $searchModel = new NhacungcapSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

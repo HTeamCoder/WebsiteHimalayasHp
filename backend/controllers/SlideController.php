@@ -2,23 +2,31 @@
 
 namespace backend\controllers;
 
-use common\models\hinhanh;
-use common\models\slideimage;
+use common\models\hinhanhslide;
 use Yii;
 use common\models\slide;
-use common\models\slidesearch;
+use common\models\SlideSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * SlideController implements the CRUD actions for slide model.
  */
 class SlideController extends Controller
 {
-    public function behaviors()
+     public function behaviors()
     {
         return [
+         'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -34,7 +42,7 @@ class SlideController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new slidesearch();
+        $searchModel = new SlideSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -50,8 +58,10 @@ class SlideController extends Controller
      */
     public function actionView($id)
     {
+        $slide = new hinhanhslide();
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'slide'=>$slide
         ]);
     }
 
@@ -63,13 +73,13 @@ class SlideController extends Controller
     public function actionCreate()
     {
         $model = new slide();
-        $hinhanh = new slideimage();
+        $slide = new hinhanhslide();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'hinhanh' => $hinhanh,
+                'slide'=>$slide,
             ]);
         }
     }
@@ -83,13 +93,13 @@ class SlideController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $hinhanh = new slideimage();
+        $slide = new hinhanhslide();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
-                'hinhanh' => $hinhanh,
+                'slide'=>$slide,
             ]);
         }
     }
@@ -121,5 +131,21 @@ class SlideController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    public function actionDeleteimage($id,$slide_id)
+    {
+       if (isset($id)&&isset($slide_id)&&is_numeric($id)&&is_numeric($slide_id))
+       {
+            $hinhanh = new hinhanhslide();
+            $anh = $hinhanh->findOne(['id'=>$id,'slide_id'=>$slide_id]);
+            if ($anh)
+            {
+                if (file_exists($anh->path))
+                    unlink($anh->path);
+                $hinhanh->deleteAll(['id'=>$id,'slide_id'=>$slide_id]);
+            }
+       }
+        return $this->redirect(['update', 'id' => $slide_id]);
     }
 }

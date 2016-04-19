@@ -12,12 +12,23 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "stable",
+    
+	"minimum-stability": "dev",
+"prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*"
+        "yiisoft/yii2-swiftmailer": "*",
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "mihaildev/yii2-ckeditor": "*",
+        "justinvoelker/yii2-tagging": "*",
+        "alexander-suter/yii2-tag-cloud": "*",
+        "yiisoft/yii2-jui": "^2.0",
+        "sjaakp/yii2-taggable": "*",
+        "iutbay/yii2-fontawesome": "*",
+        "2amigos/yii2-ckeditor-widget": "~1.0",
+        "omnilight/yii2-shopping-cart": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
@@ -29,7 +40,7 @@
         "process-timeout": 1800,
 		
 		"github-oauth": {
-            "github.com": "74ee388e02a8951e22af12ff6243eb787637bff2"
+            "github.com": "57a78fdedfcf1eaa5f1e4b6991d76eae223258a5"
         }
     },
     "extra": {

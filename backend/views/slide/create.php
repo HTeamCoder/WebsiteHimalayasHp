@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\slide */
 
-$this->title = Yii::t('app', 'Create Slide');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Slides'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Thêm mới Slide');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Slide'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="slide-create">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
-        'hinhanh' => $hinhanh,
+        'slide'=>$slide,
     ]) ?>
 
 </div>

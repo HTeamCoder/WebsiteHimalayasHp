@@ -4,9 +4,113 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8580bd82955b1fbb80d47024e184056e",
-    "content-hash": "e1929a97e872bdbaacc8530468eccb67",
+    "hash": "f3221dd545d59bfce1faa230173ab326",
+    "content-hash": "b5ba428fa86b27f2a1626e046130a952",
     "packages": [
+        {
+            "name": "2amigos/yii2-ckeditor-widget",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-ckeditor-widget.git",
+                "reference": "023eb29fedfc3c3121c17688ed237e8688f5eb50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-ckeditor-widget/zipball/023eb29fedfc3c3121c17688ed237e8688f5eb50",
+                "reference": "023eb29fedfc3c3121c17688ed237e8688f5eb50",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\ckeditor\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CKEditor widget for Yii2.",
+            "homepage": "http://yiiwheels.com/extension/ckeditor-widget",
+            "keywords": [
+                "2amigos",
+                "CKEditor",
+                "extension",
+                "widget",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2015-04-30 12:22:25"
+        },
+        {
+            "name": "alexander-suter/yii2-tag-cloud",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexsuter/yii2-tag-cloud.git",
+                "reference": "5c3b9c3a8c4d8c33985c275e80c669e89443c103"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexsuter/yii2-tag-cloud/zipball/5c3b9c3a8c4d8c33985c275e80c669e89443c103",
+                "reference": "5c3b9c3a8c4d8c33985c275e80c669e89443c103",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "2.0.*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "asu\\tagcloud\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Ramirez",
+                    "email": "amigo.cobos@gmail.com"
+                },
+                {
+                    "name": "Alexander Suter",
+                    "email": "alexander.suter.ch@gmail.com"
+                }
+            ],
+            "description": "Tagcloud for Yii2",
+            "homepage": "https://github.com/alexander-suter/yii2-tag-cloud",
+            "keywords": [
+                "tagcloud",
+                "yii2"
+            ],
+            "time": "2016-03-02 09:30:49"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.5",
@@ -86,6 +190,67 @@
                 "jquery",
                 "library"
             ]
+        },
+        {
+            "name": "bower-asset/jquery-tag-editor",
+            "version": "1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pixabay/jQuery-tagEditor.git",
+                "reference": "46f6c41301178876ebf793fae0c3f2af8c66458a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pixabay/jQuery-tagEditor/zipball/46f6c41301178876ebf793fae0c3f2af8c66458a",
+                "reference": "46f6c41301178876ebf793fae0c3f2af8c66458a",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-ignore": [
+                    "bower.json",
+                    "demo.html",
+                    "readme.md",
+                    "tag-editor.jquery.json"
+                ]
+            },
+            "description": "A powerful and lightweight tag editor plugin for jQuery.",
+            "keywords": [
+                "drag and drop",
+                "edit",
+                "editable",
+                "editor",
+                "keywords",
+                "tags"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.11.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jqueryui.git",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery-ui.js"
+                ],
+                "bower-asset-ignore": []
+            }
         },
         {
             "name": "bower-asset/jquery.inputmask",
@@ -297,6 +462,420 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "fortawesome/font-awesome",
+            "version": "v4.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FortAwesome/Font-Awesome.git",
+                "reference": "fddd2c240452e6c8990c4ef75e0265b455aa7968"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/fddd2c240452e6c8990c4ef75e0265b455aa7968",
+                "reference": "fddd2c240452e6c8990c4ef75e0265b455aa7968",
+                "shasum": ""
+            },
+            "require-dev": {
+                "jekyll": "1.0.2",
+                "lessc": "1.4.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OFL-1.1",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Gandy",
+                    "email": "dave@fontawesome.io",
+                    "homepage": "http://twitter.com/davegandy",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The iconic font and CSS framework",
+            "homepage": "http://fontawesome.io/",
+            "keywords": [
+                "FontAwesome",
+                "awesome",
+                "bootstrap",
+                "font",
+                "icon"
+            ],
+            "time": "2015-11-30 17:28:02"
+        },
+        {
+            "name": "iutbay/yii2-fontawesome",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iutbay/yii2-fontawesome.git",
+                "reference": "70bb5cd17bf555700879ce8ea2fbccf5b1e53a1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iutbay/yii2-fontawesome/zipball/70bb5cd17bf555700879ce8ea2fbccf5b1e53a1d",
+                "reference": "70bb5cd17bf555700879ce8ea2fbccf5b1e53a1d",
+                "shasum": ""
+            },
+            "require": {
+                "fortawesome/font-awesome": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "iutbay\\yii2fontawesome\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kevin LEVRON",
+                    "email": "kevin.levron@gmail.com"
+                }
+            ],
+            "description": "Simple Font Awesome helper for Yii2",
+            "homepage": "https://github.com/iutbay/yii2-fontawesome",
+            "keywords": [
+                "FontAwesome",
+                "extension",
+                "icon",
+                "yii2"
+            ],
+            "time": "2014-11-28 10:53:20"
+        },
+        {
+            "name": "justinvoelker/yii2-tagging",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justinvoelker/yii2-tagging.git",
+                "reference": "1e8a93e3a1e34e386bd0c48631fd06d54bb9e0c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/justinvoelker/yii2-tagging/zipball/1e8a93e3a1e34e386bd0c48631fd06d54bb9e0c2",
+                "reference": "1e8a93e3a1e34e386bd0c48631fd06d54bb9e0c2",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "justinvoelker\\tagging\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Voelker",
+                    "email": "justin@justinvoelker.com"
+                }
+            ],
+            "description": "Turn delimited data into tags",
+            "keywords": [
+                "tag",
+                "yii2"
+            ],
+            "time": "2015-08-03 16:26:25"
+        },
+        {
+            "name": "kartik-v/bootstrap-fileinput",
+            "version": "v4.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
+                "reference": "32b0ccb2562b9c83f12222ddd1406986a45450d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/32b0ccb2562b9c83f12222ddd1406986a45450d1",
+                "reference": "32b0ccb2562b9c83f12222ddd1406986a45450d1",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\plugins\\fileinput\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An enhanced HTML 5 file input for Bootstrap 3.x with features for file preview for many file types, multiple selection, ajax uploads, and more.",
+            "homepage": "https://github.com/kartik-v/bootstrap-fileinput",
+            "keywords": [
+                "ajax",
+                "bootstrap",
+                "delete",
+                "file",
+                "image",
+                "input",
+                "jquery",
+                "multiple",
+                "preview",
+                "progress",
+                "upload"
+            ],
+            "time": "2016-02-28 02:23:49"
+        },
+        {
+            "name": "kartik-v/yii2-krajee-base",
+            "version": "1.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-krajee-base.git",
+                "reference": "0c274e31e4392cbafc5fe158eae81738794e02ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/0c274e31e4392cbafc5fe158eae81738794e02ce",
+                "reference": "0c274e31e4392cbafc5fe158eae81738794e02ce",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-bootstrap": "@dev"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\base\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Base library and foundation components for all Yii2 Krajee extensions.",
+            "homepage": "https://github.com/kartik-v/yii2-krajee-base",
+            "keywords": [
+                "base",
+                "extension",
+                "foundation",
+                "krajee",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-01-10 12:26:29"
+        },
+        {
+            "name": "kartik-v/yii2-widget-fileinput",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-widget-fileinput.git",
+                "reference": "36f9f493c2d814529f2a195422a8af2e020fc80c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-fileinput/zipball/36f9f493c2d814529f2a195422a8af2e020fc80c",
+                "reference": "36f9f493c2d814529f2a195422a8af2e020fc80c",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/bootstrap-fileinput": "~4.2",
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kartik\\file\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An enhanced FileInput widget for Bootstrap 3.x with file preview, multiple selection, and more features (sub repo split from yii2-widgets)",
+            "homepage": "https://github.com/kartik-v/yii2-widget-fileinput",
+            "keywords": [
+                "extension",
+                "file",
+                "form",
+                "input",
+                "jquery",
+                "plugin",
+                "upload",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-01-10 16:10:58"
+        },
+        {
+            "name": "mihaildev/yii2-ckeditor",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MihailDev/yii2-ckeditor.git",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MihailDev/yii2-ckeditor/zipball/d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mihaildev\\ckeditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Mihail",
+                    "email": "mihail.kucher@gmail.com",
+                    "homepage": "https://github.com/MihailDev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 CKEditor",
+            "homepage": "https://github.com/MihailDev/yii2-ckeditor",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "wysiwyg",
+                "yii"
+            ],
+            "time": "2014-11-19 22:04:08"
+        },
+        {
+            "name": "omnilight/yii2-shopping-cart",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omnilight/yii2-shopping-cart.git",
+                "reference": "76f785e278f403fbac6b1b59d8d15d83345533d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omnilight/yii2-shopping-cart/zipball/76f785e278f403fbac6b1b59d8d15d83345533d5",
+                "reference": "76f785e278f403fbac6b1b59d8d15d83345533d5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yz\\shoppingcart\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Pavel Agalecky",
+                    "email": "pavel.agalecky@gmail.com"
+                }
+            ],
+            "description": "Yii2 extension that adds shopping cart functions",
+            "keywords": [
+                "shopping cart",
+                "yii"
+            ],
+            "time": "2015-09-08 11:18:44"
+        },
+        {
+            "name": "sjaakp/yii2-taggable",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sjaakp/yii2-taggable.git",
+                "reference": "cae0ed37e23515f45cd5569ad3d4886c6c73a966"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sjaakp/yii2-taggable/zipball/cae0ed37e23515f45cd5569ad3d4886c6c73a966",
+                "reference": "cae0ed37e23515f45cd5569ad3d4886c6c73a966",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery-tag-editor": "*",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "sjaakp\\taggable\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sjaak Priester",
+                    "email": "sjaak@sjaakpriester.nl",
+                    "homepage": "http://sjaakpriester.nl"
+                }
+            ],
+            "description": "Manage tags of ActiveRecord in Yii2.",
+            "keywords": [
+                "Behavior",
+                "extension",
+                "tag",
+                "tags",
+                "widget",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-10-16 14:51:37"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -543,6 +1122,56 @@
             "time": "2016-02-06 00:49:24"
         },
         {
+            "name": "yiisoft/yii2-jui",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-jui.git",
+                "reference": "37991d06ad952eead7bd5bb839c9a352d9b5e34a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/37991d06ad952eead7bd5bb839c9a352d9b5e34a",
+                "reference": "37991d06ad952eead7bd5bb839c9a352d9b5e34a",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery-ui": "1.11.*@stable",
+                "yiisoft/yii2": ">=2.0.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                },
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\jui\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                }
+            ],
+            "description": "The Jquery UI extension for the Yii framework",
+            "keywords": [
+                "jQuery UI",
+                "yii2"
+            ],
+            "time": "2016-03-17 03:53:41"
+        },
+        {
             "name": "yiisoft/yii2-swiftmailer",
             "version": "2.0.4",
             "source": {
@@ -674,6 +1303,45 @@
             "time": "2015-05-29 06:29:14"
         },
         {
+            "name": "iutbay/yii2-kcfinder",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iutbay/yii2-kcfinder.git",
+                "reference": "13e5ce1226915634905bb7488a9884f69293cf8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iutbay/yii2-kcfinder/zipball/13e5ce1226915634905bb7488a9884f69293cf8f",
+                "reference": "13e5ce1226915634905bb7488a9884f69293cf8f",
+                "shasum": ""
+            },
+            "require": {
+                "sunhater/kcfinder": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "iutbay\\yii2kcfinder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Kevin LEVRON",
+                    "email": "kevin.levron@gmail.com"
+                }
+            ],
+            "description": "KCFinder for Yii2",
+            "homepage": "https://github.com/iutbay/yii2-kcfinder",
+            "keywords": [
+                "extension",
+                "kcfinder",
+                "yii2"
+            ],
+            "time": "2014-11-28 10:23:47"
+        },
+        {
             "name": "phpspec/php-diff",
             "version": "v1.0.2",
             "source": {
@@ -706,6 +1374,61 @@
             ],
             "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
             "time": "2013-11-01 13:02:21"
+        },
+        {
+            "name": "sunhater/kcfinder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sunhater/kcfinder.git",
+                "reference": "b645d2a81e647d63780c238b130593e32b4d95a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sunhater/kcfinder/zipball/b645d2a81e647d63780c238b130593e32b4d95a9",
+                "reference": "b645d2a81e647d63780c238b130593e32b4d95a9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "ext-exif": "*",
+                "ext-fileinfo": "*",
+                "ext-gmagick": "*",
+                "ext-http": "*",
+                "ext-imagick": "*",
+                "ext-sockets": "*",
+                "ext-zip": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+",
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Tzonkov",
+                    "email": "sunhater@sunhater.com",
+                    "homepage": "http://sunhater.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "KCFinder web file manager",
+            "homepage": "http://kcfinder.sunhater.com",
+            "keywords": [
+                "explorer",
+                "file",
+                "file explorer",
+                "file manager",
+                "finder",
+                "kcfinder",
+                "manager"
+            ],
+            "time": "2014-08-24 00:00:00"
         },
         {
             "name": "yiisoft/yii2-codeception",
@@ -901,9 +1624,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "kartik-v/yii2-widget-fileinput": 20
+    },
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"

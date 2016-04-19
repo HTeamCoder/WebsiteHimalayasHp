@@ -7,26 +7,26 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
+$this->title = 'Đăng nhập hệ thống HimalayasHP';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+    <p>Vui lòng điền đầy đủ thông tin dưới đây để đăng nhập hệ thống:</p>
 
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true,'placeholder'=>'Nhập tên đăng nhập'])->label('Tên đăng nhập'. Html::tag('span', ' *',['class'=>'text-danger'])) ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'password')->passwordInput(['placeholder'=>'Nhập mật khẩu'])->label('Mật khẩu'. Html::tag('span', ' *',['class'=>'text-danger'])) ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                <?= $form->field($model, 'rememberMe')->checkbox()->label('Ghi nhớ đăng nhập') ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Đăng nhập', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>

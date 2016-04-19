@@ -7,21 +7,12 @@
 
 use yii\helpers\Html;
 
-$this->title = $name;
+$this->title = 'Không tìm thấy trang';
 ?>
-<div class="site-error">
+<div class="site-error" style="background: url('<?= Yii::$app->request->baseUrl; ?>/himalaya.jpg');height: 600px;width: 100%;">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+    <h1 style="padding-top:300px;font-size: 50pt;"><p class="text-center"><?= '404 NOT FOUND' ?></p></h1>
+    <div class="alert alert-danger text-center">
+        <h4><?= $this->title ?></h4>
     </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
 </div>

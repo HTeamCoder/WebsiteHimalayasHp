@@ -103,3 +103,34 @@ a.desc:after {
 .nav > li > form > button:hover {
     text-decoration: none;
 }
+/*config style css for list image*/
+.wrap-image{
+    float: left;
+}
+.box-image:hover img{
+    opacity: 0.6;
+    transition: opacity 0.5s linear;
+}
+.box-image:hover i{
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+.box-image i{
+  opacity: 0;
+}
+.box-image img{
+    opacity: 1;
+}
+.box-image{
+    position: relative;
+}
+.box-image img{
+    margin:0 5px;
+}
+.box-image .delete-img
+{
+    position:absolute;left:131px;z-index:99999;top:0px;color:#fff;padding:5px;
+}
+#list-image{
+    overflow: auto;
+}

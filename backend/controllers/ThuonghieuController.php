@@ -8,15 +8,24 @@ use common\models\ThuonghieuSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * ThuonghieuController implements the CRUD actions for thuonghieu model.
  */
 class ThuonghieuController extends Controller
 {
-    public function behaviors()
+     public function behaviors()
     {
         return [
+         'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

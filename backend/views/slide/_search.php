@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\slidesearch */
+/* @var $model common\models\SlideSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -17,13 +17,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'tieu_de') ?>
+    <?= $form->field($model, 'tieude') ?>
 
-    <?= $form->field($model, 'duong_dan') ?>
+    <?= $form->field($model, 'duongdan') ?>
 
-    <?= $form->field($model, 'active') ?>
+    <?= $form->field($model, 'trangthai') ?>
 
-    <?= $form->field($model, 'noi_dung') ?>
+    <?= $form->field($model, 'noidung') ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

@@ -5,12 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\nhacungcap */
 
-$this->title = Yii::t('app', 'Update {modelClass}: ', [
-    'modelClass' => 'Nhà cung cấp',
-]) . ' ' . $model->ten;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Danh sách nhà cung cấp'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->ten, 'url' => ['view', 'id' => $model->ten]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->title = Yii::t('app', 'Cập nhật nhà cung cấp: ') . ' ' . $model->tennhacungcap;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Nhà cung cấp'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->tennhacungcap, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = Yii::t('app', 'Cập nhật');
 ?>
 <div class="nhacungcap-update">
 
